@@ -88,3 +88,13 @@ footer p {
 .itis3135-introduction {
     text-align: center;
 }
+
+a {
+    color: #6F4E37;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #6F4E37;
+    text-decoration: underline;
+}
