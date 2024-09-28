@@ -1,100 +1,94 @@
+:root {
+    --primary-color: #374151;
+    --background-color: #f3f4f6;
+    --accent-color: #4a90e2;
+    --text-color: #333;
+}
+
 body {
-    text-align: center;
-    background-color: antiquewhite;
-    font-family: Tahoma, sans-serif;
-    color: #6F4E37;
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
     margin: 0;
-    padding: 20px;
+    background: linear-gradient(135deg, #accbee, #e7f0fd);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-header {
-    margin-bottom: 20px;
-    background-color: #efeee8;
-    padding: 20px;
-    border-bottom: 2px solid #6F4E37;
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+    transition: text-shadow 0.3s ease; /* Add transition for smooth effect */
 }
 
-h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
+h1 { font-size: 2.2em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.4em; }
 
-nav a {
-    color: #6F4E37;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-main {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
-    padding: 20px;
-    background-color: #efeee8;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+/* New: Text Shadow on Hover for h1 and h2 */
+h1:hover, h2:hover {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 p {
-    font-size: 1.2em;
     line-height: 1.6;
-    padding: 10px;
+    margin-bottom: 1em;
 }
 
-footer {
-    margin-top: 20px;
-    background-color: #efeee8;
+header, footer, main, .background-head {
+    background-color: var(--background-color);
     padding: 20px;
-    border-top: 2px solid #6F4E37;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 90%;
 }
 
-footer nav a {
-    color: #6F4E37;
+header, footer { text-align: center; }
+main { flex: 1; }
+
+nav { margin: 1em 0; }
+
+nav a, footer a {
+    color: var(--primary-color);
     text-decoration: none;
     margin: 0 10px;
     font-weight: bold;
 }
 
-footer nav a:hover {
-    text-decoration: underline;
-}
-
-footer p {
-    margin-top: 10px;
-    font-size: 0.9em;
-    color: #6F4E37;
+nav a:hover, footer a:hover {
+    color: var(--accent-color);
 }
 
 #capybara {
-    max-width: 50%;
+    max-width: 300px;
+    width: 100%;
     height: auto;
     display: block;
     margin: 20px auto;
-    border: 2px solid #6F4E37;
+    border: 2px solid var(--primary-color);
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .itis3135-introduction {
     text-align: center;
+    margin-bottom: 2em;
 }
 
 a {
-    color: #6F4E37;
+    color: var(--accent-color);
     text-decoration: none;
 }
 
-a:hover{
-    color: #6F4E37;
+a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    body { font-size: 16px; }
+    header, footer, main, .background-head {
+        padding: 15px;
+        margin: 10px auto;
+    }
 }
