@@ -6,72 +6,79 @@
 	<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 	<title>Allie Costners Site</title>
 	<style>
+		:root {
+			--primary-color: #374151;
+			--background-color: #f3f4f6;
+			--accent-color: #4a90e2;
+		}
+	
 		body {
-			text-align: center;
-			background-color: antiquewhite;
-			font-family: tahoma, sans-serif;
-			color: #6F4E37;
+			font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+			color: var(--primary-color);
 			margin: 0;
 			padding: 20px;
+			background: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+			line-height: 1.5;
 		}
-		
-		h1 {
-			font-size: 2em;
-			margin-bottom: 10px;
-		}
-
-		header {
-			margin-bottom: 20px;
-		}
-
-		main {
-			max-width: 800px;
+	
+		header, main, footer {
+			max-width: 65ch;
 			margin: 0 auto;
-			text-align: left;
 			padding: 20px;
-			background-color: #efeee8;
-			border-radius: 8px;
-			box-shadow:  0 0 10px rgba(0, 0, 0, 0.1);
 		}
-
+	
+		h1 {
+			font-size: 2.25rem;
+			font-weight: 700;
+			margin-bottom: 1rem;
+		}
+	
+		img {
+			max-width: 100%;
+			height: auto;
+			border-radius: 0.5rem;
+		}
+	
+		p {
+			font-size: 1rem;
+			margin-bottom: 1rem;
+		}
+	
+		main {
+			background-color: var(--background-color);
+			border-radius: 0.5rem;
+			box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+		}
+	
+		nav {
+			margin: 1rem 0;
+		}
+	
 		nav a {
-			color: #6F4E37;
+			color: var(--primary-color);
 			text-decoration: none;
-			margin: 0 10px;
+			margin: 0 0.5rem;
+			font-weight: 500;
 		}
-
+	
 		nav a:hover {
 			text-decoration: underline;
 		}
-
-		img {
-			width: auto;
-			height: 300px;
-			border-radius: 20px;
-		}
-
-        p {
-            font-size: 1.2em;
-			line-height: 1.6;
-			padding: 10px;
-        }
-
+	
 		footer {
-		    margin-top: 20px;
-			padding: 10px;
-			background-color: #f4f4f4;
-			border-top: 1px solid #ccc;
+			margin-top: 2rem;
+			text-align: center;
+			font-size: 0.875rem;
 		}
-
+	
 		@media (max-width: 600px) {
-            main {
-                padding: 10px;
-            }
-            p {
-                font-size: 1em;
-            }
-        }
-
+			body {
+				padding: 10px;
+			}
+			header, main, footer {
+				padding: 15px;
+			}
+		}
 	</style>
 </head>
 <body>
