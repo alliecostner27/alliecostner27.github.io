@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <title>Allie Costner || ITIS3135 Forms</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+    <header>
+        <div data-include="components/header.html"></div>
+    </header>
+    <main>
+        <h2>Academic Capybara Tutoring Form</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            
+            <fieldset>
+                <legend>Subjects of Interest:</legend>
+                <input type="checkbox" id="math" name="subjects" value="math">
+                <label for="math">Math</label>
+                <input type="checkbox" id="science" name="subjects" value="science">
+                <label for="science">Science</label>
+                <input type="checkbox" id="reading" name="subjects" value="reading">
+                <label for="reading">Reading</label>
+                <input type="checkbox" id="writing" name="subjects" value="writing">
+                <label for="writing">Writing</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Preferred Session Length:</legend>
+                <input type="radio" id="short" name="session_length" value="30" required>
+                <label for="short">30 minutes</label>
+                <input type="radio" id="medium" name="session_length" value="60">
+                <label for="medium">60 minutes</label>
+                <input type="radio" id="long" name="session_length" value="90">
+                <label for="long">90 minutes</label>
+            </fieldset>
+
+            <label for="age_group">Student Age Group:</label>
+            <select id="age-group" required>
+                <option value="">Select an age group</option>
+                <option value="elementary">Elementary (5-10)</option>
+                <option value="middle">Middle School (11-13)</option>
+                <option value="high">High School (14-18)</option>
+            </select>
+
+            <div class="form-buttons">
+                <button type="reset">Clear Form</button>
+                <button type="submit">Register Now</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <div data-include="components/footer.html"></div>
+    </footer>
+    <script src="scripts/HTMLInclude.min.js"></script>
+</body>
+</html>
