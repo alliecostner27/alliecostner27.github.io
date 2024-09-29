@@ -21,10 +21,6 @@ h1, h2, h3 {
     transition: text-shadow 0.3s ease; /* Add transition for smooth effect */
 }
 
-h1 { font-size: 2.2em; }
-h2 { font-size: 1.8em; }
-h3 { font-size: 1.4em; }
-
 /* New: Text Shadow on Hover for h1 and h2 */
 h1:hover, h2:hover {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
