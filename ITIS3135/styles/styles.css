@@ -92,3 +92,55 @@ a:hover {
         margin: 10px auto;
     }
 }
+
+#employee-data-complex {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Arial, sans-serif;
+  }
+
+  #employee-data-complex th, #employee-data-complex td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  #employee-data-complex thead tr {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  #employee-data-complex .department-header {
+    background-color: #45a049;
+  }
+
+  #employee-data-complex .department {
+    font-weight: bold;
+    background-color: #f2f2f2;
+  }
+
+  #employee-data-complex .royal-family {
+    background-color: #ffe6e6;
+  }
+
+  #employee-data-complex .military {
+    background-color: #e6f2ff;
+  }
+
+  #employee-data-complex .court {
+    background-color: #e6ffe6;
+  }
+
+  #employee-data-complex tr:hover {
+    background-color: #ddd;
+  }
+
+  #employee-data-complex #total-row {
+    background-color: #f9f9f9;
+    font-weight: bold;
+  }
+
+  #employee-data-complex #total-years,
+  #employee-data-complex #total-salary {
+    background-color: #e6e6e6;
+  }
