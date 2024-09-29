@@ -18,10 +18,9 @@ body {
 h1, h2, h3 {
     color: var(--primary-color);
     margin-bottom: 0.5em;
-    transition: text-shadow 0.3s ease; /* Add transition for smooth effect */
+    transition: text-shadow 0.3s ease; 
 }
 
-/* New: Text Shadow on Hover for h1 and h2 */
 h1:hover, h2:hover {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
@@ -32,6 +31,7 @@ p {
 }
 
 header, footer, main, .background-head {
+   box-sizing: border-box;
     background-color: var(--background-color);
     padding: 20px;
     margin: 20px auto;
@@ -41,10 +41,17 @@ header, footer, main, .background-head {
     width: 90%;
 }
 
-header, footer { text-align: center; }
-main { flex: 1; }
+header, footer { 
+  text-align: center;
+ }
 
-nav { margin: 1em 0; }
+main { 
+  flex: 1; 
+}
+
+nav {
+   margin: 1em 0;
+}
 
 nav a, footer a {
     color: var(--primary-color);
@@ -140,3 +147,75 @@ a:hover {
   #employee-data-complex #total-salary {
     background-color: #e6e6e6;
   }
+  form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+select {
+  box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 2px solid var(--accent-color);
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+}
+
+fieldset {
+    margin-top: 20px;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+legend {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--accent-color);
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
