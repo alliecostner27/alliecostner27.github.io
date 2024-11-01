@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <title>My Reading Journey</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+        :root {
+            --primary-color: #FF6F61; /* Soft coral */
+            --secondary-color: #FFFEFF; /* Light pink */
+            --text-color: #0B132B; /* Dark navy */
+            --background-gradient: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background: var(--background-gradient);
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: var(--text-color);
+            text-align: center;
+            padding: 2rem;
+            border-bottom: 5px solid var(--primary-color);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto; 
+            padding: 20px; 
+        }
+
+        section {
+            display: none;
+            background-color: #fff;
+            margin-bottom: 40px; 
+            padding: 30px; 
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .active {
+            display: block;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            text-align: center; 
+            font-size: 2rem; 
+            position: relative; 
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        p {
+           margin-bottom: 1rem; 
+           font-size: 1.1rem; 
+           line-height: 1.5; 
+           text-align: center; 
+       }
+
+       img {
+           max-width: 100%; 
+           height: auto; 
+           display: block; 
+           margin: 10px auto; 
+           border-radius: 10px;
+       }
+
+       footer {
+           background-color: rgba(255,255,255,.9); 
+           color: var(--text-color); 
+           text-align: center; 
+           padding: 1rem; 
+           border-top: 5px solid var(--primary-color);
+       }
+
+       footer a {
+           color: var(--primary-color); 
+       }
+
+       .slideshow-container {
+           max-width: 100%; 
+           position: relative; 
+           margin: auto; 
+           overflow: hidden; 
+           border-radius: 10px;
+       }
+
+       .mySlides1, .mySlides2 {
+           display: none; 
+       }
+
+       .slideshow-container img {
+           width: 100%; 
+           height: auto; 
+       }
+
+       .prev, .next {
+           cursor: pointer; 
+           position: absolute; 
+           top: 50%; 
+           width: auto; 
+           margin-top: -22px; 
+           padding: 16px; 
+           color: white; 
+           font-weight: bold; 
+           font-size: 18px; 
+           transition: 0.6s ease; 
+           border-radius: 0 3px 3px 0; 
+           user-select: none; 
+           background-color: rgba(0,0,0,.8);
+       }
+
+       .next {
+           right: 0; 
+           border-radius: 3px 0 0 3px;
+       }
+
+       .prev:hover, .next:hover {
+          background-color: rgba(255,255,255,.9);
+          color: var(--text-color);
+      }
+      
+      @media (max-width: 768px) {
+          nav ul {
+              flex-direction: column;
+          }
+          nav ul li {
+              margin: 5px;  
+          }
+      }
+
+      table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 20px;
+      }
+      th, td {
+          border: 1px solid var(--primary-color);
+          padding: 12px;
+          text-align: left;
+      }
+      th {
+          background-color: var(--primary-color);
+          color: white;
+      }
+      tr:nth-child(even) {
+          background-color: #f2f2f2;
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Reading Journey</h1>
+        <nav>
+             <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#best-times">Best Times</a></li>
+                <li><a href="#favorite-books">Favorite Books</a></li>
+                <li><a href="#favorite-quotes">Favorite Quotes</a></li>
+                <li><a href="#goodreads">GoodReads</a></li>
+                <li><a href="#ai-prompts">AI Prompts</a></li>
+             </ul>
+         </nav>
+     </header>
+
+     <main>
+        <section id="home">
+            <h2>Home</h2>
+            <p>Welcome to my reading corner!</p>
+            <p>Here, you'll find information about my favorite books, authors, and more.</p>
+            <div class="slideshow-container">
+                <div class="myslides2">
+                    <img src="./images/tog-books.jpeg" alt="TOG Books">
+                </div>
+                <div class="myslides2">
+                    <img src="./images/A Court of Thorns and Roses Book Series.jpeg" alt="ACOTAR books">
+                </div>
+                <div class="myslides2">
+                    <img src="./images/fourth wing and iron flame by rebecca yarros.jpeg" alt="Fourth Wing and Iron Flame books">
+                </div>
+                <a class="prev" data-slide="1">❮</a>
+                <a class="next" data-slide="1">❯</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About</h2>
+            <div class="slideshow-container">
+                <div class="myslides1">
+                    <img src="./images/harrypotter.jpeg" alt="Harry Potter Books">
+                </div>
+                <div class="myslides1">
+                    <img src="./images/hogwarts.jpeg" alt="Hogwarts Grounds">
+                </div>
+                <div class="myslides1">
+                    <img src="./images/castle.jpeg" alt="Hogwarts Castle">
+                </div>
+                <a class="prev" data-slide="0">❮</a>
+                <a class="next" data-slide="0">❯</a>
+            </div>
+            <p>Growing up, I always had a passion for reading books, specifically the Harry Potter Series.</p>
+            <p>Since then, I have been an avid reader who loves to end the day with a good book.</p>
+        </section>
+
+         <section id="best-times">
+             <h2>Best Times</h2>
+             <p>Curling up with a good book during quiet evenings is one of my favorite pastimes.</p>
+                <p>There's nothing like getting lost in a story and feeling like you're part of the world.</p>
+                <p>Whether it's a rainy day or a sunny afternoon, reading is always a good idea.</p>
+         </section>
+
+         <section id="favorite-books">
+             <h2>Favorite Books</h2>
+             <p>These are some of my all-time favorite books.</p>
+             <p>I also have many many other books that are amazing, as well.</p>
+             <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Genre</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Throne of Glass</td>
+                        <td>Sarah J. Mass</td>
+                        <td>Fantasy</td>
+                        <td>⭐⭐⭐⭐⭐/⭐⭐⭐⭐⭐</td>
+                    </tr>
+                    <tr>
+                        <td>A Court of Thorns and Roses</td>
+                        <td>Sarah J. Mass</td>
+                        <td>Fantasy</td>
+                        <td>⭐⭐⭐⭐⭐/⭐⭐⭐⭐⭐</td>
+                    </tr>
+                    <tr>
+                        <td>Fourth Wing</td>
+                        <td>Rebecca Yarros</td>
+                        <td>Fantasy</td>
+                        <td>⭐⭐⭐⭐⭐/⭐⭐⭐⭐⭐</td>
+                    </tr>
+                    <tr>
+                        <td>Iron Flame</td>
+                        <td>Rebecca Yarros</td>
+                        <td>Fantasy</td>
+                        <td>⭐⭐⭐⭐⭐/⭐⭐⭐⭐⭐</td>
+                    </tr>
+                </tbody>
+            </table>
+         </section>
+         <section id="favorite-quotes">
+            <h2>Favorite Quotes</h2>
+            <p>"To the stars who listen- and the dreams that are answered."
+                ― Sarah J. Maas</p>
+            <br>
+            <p>"So many books, so little time."
+                ― Frank Zappa</p>
+            <br>
+            <p>"She was Aelin Ashryver Galathynius- and she would not be afraid."
+                — Sarah J. Maas</p>
+         </section>
+         <section id="goodreads">
+             <h2>GoodReads</h2>
+             <p>GoodReads is one of the ways I am able to track what books I have read, what I am currently reading, and books I would like to read.</p>
+             <p>It is one of the most popular apps for book lovers.</p>
+
+             <figure>
+                <img src="./images/goodreads.jpeg" alt="goodreads">
+                <figcaption>GoodReads App</figcaption>
+             </figure>
+         </section>
+
+         <section id="ai-prompts">
+            <h2>AI Prompts</h2>
+            <p>This section showcases the AI prompts used to generate content for this page.</p>
+            <p>Using CSS, JS, &amp; HTML implement this: hide all sections in the nav link, except the one that has been clicked.</p>
+            <p>Give an example of creating a carousel slideshow using HTML, CSS, &amp; JS.</p>
+            <p>Provide CSS to better style an HTML table.</p>
+        </section>
+
+     </main>
+
+     <footer>
+         <p>&copy;2024 My Reading Journey. All rights reserved. Designed by <a href="#">Your Design Firm</a></p>
+     </footer>
+
+     <!-- JavaScript for slideshows and section navigation -->
+     <script>
+         // JavaScript for slideshows and section navigation
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('nav ul li a');
+    const sections = document.querySelectorAll('section');
+
+    // Function to show a specific section and hide others
+    function showSection(sectionId) {
+        sections.forEach(section => {
+            if (section.id === sectionId) {
+                section.classList.add('active');
+            } else {
+                section.classList.remove('active');
+            }
+        });
+    }
+
+    // Add click event listeners to navigation links
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const sectionId = this.getAttribute('href').substring(1);
+            showSection(sectionId);
+        });
+    });
+
+    // Show the home section by default
+    showSection('home');
+
+    // Slideshow functionality
+    let slideIndex = [1, 1];
+    let slideId = ["myslides1", "myslides2"];
+    showSlides(1, 0);
+    showSlides(1, 1);
+
+    function plusSlides(n, no) {
+        showSlides(slideIndex[no] += n, no);
+    }
+
+    function showSlides(n, no) {
+        let i;
+        let x = document.getElementsByClassName(slideId[no]);
+        if (n > x.length) {slideIndex[no] = 1}    
+        if (n < 1) {slideIndex[no] = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        x[slideIndex[no]-1].style.display = "block";  
+    }
+
+    // Add event listeners for slideshow buttons
+    const prevButtons = document.querySelectorAll('.prev');
+    const nextButtons = document.querySelectorAll('.next');
+
+    prevButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const slideIndex = parseInt(this.getAttribute('data-slide'));
+            plusSlides(-1, slideIndex);
+        });
+    });
+
+    nextButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const slideIndex = parseInt(this.getAttribute('data-slide'));
+            plusSlides(1, slideIndex);
+        });
+    });
+});
+     </script>
+
+</body>
+</html>
