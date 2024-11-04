@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to show a specific section and hide others
     function showSection(sectionId) {
-        sections.forEach(section => {
+        sections.forEach((section) => {
             if (section.id === sectionId) {
                 section.classList.add('active');
             } else {
@@ -356,7 +356,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
     // Add click event listeners to navigation links
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
