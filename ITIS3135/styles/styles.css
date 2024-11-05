@@ -156,6 +156,7 @@ label {
 input[type="text"],
 input[type="tel"],
 input[type="email"],
+input[type="number"],
 select {
   box-sizing: border-box;
     width: 100%;
@@ -234,4 +235,10 @@ hgroup {
 hr {
   max-width: 800px;
   margin-bottom: 50px;
+}
+
+#form-tagline {
+  text-align: center;
+  font-size: 1.2rem; /* Adjust size if needed */
+  margin: 20px 0;    /* Adds some space around the tagline */
 }
