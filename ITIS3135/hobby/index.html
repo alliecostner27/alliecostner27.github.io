@@ -339,10 +339,10 @@
          <p>&copy;2024 My Reading Journey. All rights reserved. Designed by <a href="#">Your Design Firm</a></p>
      </footer>
 
-     <!-- JavaScript for slideshows and section navigation -->
+
      <script>
-         // JavaScript for slideshows and section navigation
-document.addEventListener('DOMContentLoaded', function() {
+        // JavaScript for slideshows and section navigation
+document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('nav ul li a');
     const sections = document.querySelectorAll('section');
 
@@ -356,8 +356,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
     // Add click event listeners to navigation links
-    navLinks.forEach(link => {
+    navLinks.forEach((link) => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const sectionId = this.getAttribute('href').substring(1);
@@ -371,36 +372,41 @@ document.addEventListener('DOMContentLoaded', function() {
     // Slideshow functionality
     let slideIndex = [1, 1];
     let slideId = ["myslides1", "myslides2"];
-    showSlides(1, 0);
-    showSlides(1, 1);
-
-    function plusSlides(n, no) {
-        showSlides(slideIndex[no] += n, no);
-    }
 
     function showSlides(n, no) {
         let i;
         let x = document.getElementsByClassName(slideId[no]);
-        if (n > x.length) {slideIndex[no] = 1}    
-        if (n < 1) {slideIndex[no] = x.length}
+        if (n > x.length) {
+            slideIndex[no] = 1;
+        }
+        if (n < 1) {
+            slideIndex[no] = x.length;
+        }
         for (i = 0; i < x.length; i++) {
             x[i].style.display = "none";  
         }
         x[slideIndex[no]-1].style.display = "block";  
     }
 
+    function plusSlides(n, no) {
+        showSlides(slideIndex[no] += n, no);
+    }
+
+    showSlides(1, 0);
+    showSlides(1, 1);
+
     // Add event listeners for slideshow buttons
     const prevButtons = document.querySelectorAll('.prev');
     const nextButtons = document.querySelectorAll('.next');
 
-    prevButtons.forEach(button => {
+    prevButtons.forEach((button) => {
         button.addEventListener('click', function() {
             const slideIndex = parseInt(this.getAttribute('data-slide'));
             plusSlides(-1, slideIndex);
         });
     });
 
-    nextButtons.forEach(button => {
+    nextButtons.forEach((button) => {
         button.addEventListener('click', function() {
             const slideIndex = parseInt(this.getAttribute('data-slide'));
             plusSlides(1, slideIndex);
