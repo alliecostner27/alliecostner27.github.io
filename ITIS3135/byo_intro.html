@@ -13,10 +13,58 @@
     </header>
 
     <main>
-        <h3>Create Your Personalized Intro Page!</h3>
-        <p>We're excited to help you craft your unique introduction! Please fill out the form below, and let’s get started on creating your very own page.</p>
+        <h3>Time to BYO Intro page, please fill out the form below so we can create your own page.</h3>
+        <form id="intro-form" enctype="multipart/form-data">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
 
-        <form action=""></form>
+            <label for="mascot">Mascot:</label>
+            <input type="text" id="mascot" name="mascot" required><br>
+
+            <label for="image">Image Upload:</label>
+            <input type="file" id="image" name="image" accept=".png, .jpg, .jpeg" required><br>
+
+            <label for="image-caption">Image Caption:</label>
+            <input type="text" id="image-caption" name="image-caption" required><br>
+
+            <label for="personal-background">Personal Background:</label>
+            <input type="text" id="personal-background" name="personal-background" required><br>
+
+            <label for="professional-background">Professional Background:</label>
+            <input type="text" id="professional-background" name="professional-background" required><br>
+
+            <label for="academic-background">Academic Background:</label>
+            <input type="text" id="academic-background" name="academic-background" required><br>
+
+            <label for="webdev-background">Background in Web Development:</label>
+            <input type="text" id="webdev-background" name="webdev-background" required><br>
+
+            <label for="platform">Primary Computer Platform:</label>
+            <input type="text" id="platform" name="platform" required><br>
+
+            <label for="courses">Courses currently taking:</label>
+            <div id="course-container">
+                <div class="course-entry">
+                    <input type="text" class="course" name="course[]" required>
+                    <button type="button" class="delete-course-btn">Delete</button>
+                </div>
+            </div>
+            <button type="button" id="add-course-btn">Add Course</button><br>
+
+            <label for="funny-thing">Funny Thing:</label>
+            <input type="text" id="funny-thing" name="funny-thing" ><br>
+
+            <label for="anything-else">Anything Else?</label>
+            <input type="text" id="anything-else" name="anything-else"><br>
+
+            <label>
+                <input type="checkbox" id="agree" required>
+                I understand that what is on this page is not password protected and I will not put anything here that I don't want publicly available.
+            </label><br>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
     </main>
 
     <footer>
@@ -24,5 +72,6 @@
     </footer>
     <script src="scripts/HTMLInclude.min.js"></script>
     <script src="scripts/defaultscripts.js"></script>
+    <script src="scripts/survey.js"></script>
 </body>
 </html>
