@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.querySelector('#intro-content').insertBefore(img, document.querySelector('#intro-content').firstChild);
             }
             reader.readAsDataURL(imageFile);
-        }
+        };
 
         
         for (let [key, value] of formData.entries()) {
