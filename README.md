@@ -49,8 +49,8 @@ As I continue to learn and grow in web development, I plan to:
 ## **Contact**
 
 For any questions or feedback regarding this project, please contact:  
-**[Your Name]**  
-**[Your UNC Charlotte Email]**
+**Allie Costner**  
+**acostne9@charlotte.edu**
 
 ---
 
