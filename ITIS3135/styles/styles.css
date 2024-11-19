@@ -32,6 +32,7 @@ header, footer {
  }
 
 h1, h2, h3 {
+    text-align: center;
     color: var(--primary-color);
     margin-bottom: 0.5em;
     transition: text-shadow 0.3s ease; 
@@ -48,24 +49,24 @@ p {
 
 .background-head {
   background-color: #f0f0f0; /* Light gray background */
-  border-radius: 15px; /* Rounded corners */
-  padding: 10px 20px; /* Inner spacing */
-  margin: 10px auto; /* Vertical spacing and horizontal centering */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-  display: block; /* Changed from inline-block to block */
-  width: fit-content; /* Adjust width to content */
-  text-align: center; /* Center the text inside */
+  border-radius: 15px; 
+  padding: 10px 20px; 
+  margin: 10px auto; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+  display: block; 
+  width: fit-content; 
+  text-align: center; 
 }
 
 .background-text {
-  max-width: 600px; /* Adjust this value as needed */
+  max-width: 600px; 
   width: 100%;
   margin: 0 auto 20px;
-  background-color: #f9f9f9; /* Light background color */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
-  line-height: 1.6; /* Improved readability */
-  text-align: left; /* Align text to the left */
+  background-color: #f9f9f9; 
+  border-radius: 10px; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+  line-height: 1.6; 
+  text-align: left; 
 }
 
 nav {
@@ -239,7 +240,74 @@ hr {
 
 #form-tagline {
   text-align: center;
-  font-size: 1.2rem; /* Adjust size if needed */
-  margin: 20px 0;    /* Adds some space around the tagline */
+  font-size: 1.2rem; 
+  margin: 20px 0;    
+}
+
+#slideshow-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+#main-image {
+  width: 80%;
+  height: auto;
+  border-radius: 5px;
+}
+
+#caption {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+#thumbnails {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 1px #ddd;
+}
+
+.thumbnail:hover {
+  box-shadow: 0 0 0 2px #007bff;
+}
+
+.thumbnail-active {
+  box-shadow: 0 0 0 2px #007bff, 0 0 10px rgba(0,123,255,0.3);
+  transform: scale(1.05);
+}
+
+#controls {
+  margin-top: 20px;
+}
+
+.control-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.control-btn:hover {
+  background-color: #0056b3;
 }
 
