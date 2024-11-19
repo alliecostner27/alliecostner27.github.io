@@ -3,7 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>About the Owners</title>
+    <style>
+        :root {
+            --primary-color: #7d5a3e; /* Muted brown */
+            --secondary-color: #c9c9c9; /* Light gray */
+            --accent-color: #f2b94c; /* Soft gold */
+            --text-color: #3b3b3b; /* Dark gray */
+            --background-color: #fefefe; /* Off-white */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif; /* Classic serif font for vintage feel */
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 15px 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        nav li a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            margin-top: 80px; /* Space for fixed header */
+            padding: 60px 40px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: normal; /* Softer weight for vintage look */
+        }
+
+        main p {
+            text-align: center;
+            font-size: 1.2em;
+            color: var(--text-color);
+            margin-top: 30px;
+            font-style: italic; /* Italic for vintage flair */
+        }
+
+        footer {
+           text-align: center; 
+           padding: 20px; 
+           background-color: var(--secondary-color);
+           color: var(--text-color);
+           position: relative; 
+           bottom: 0; 
+           width: 100%;
+           box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+       }
+
+       @media (max-width: 768px) {
+           nav ul {
+                flex-direction: column;
+                align-items: center; 
+           }
+           
+           nav li {
+                margin-bottom: 10px; 
+           }
+       }
+    </style>
 </head>
 <body>
     <header>
@@ -17,11 +124,13 @@
             </ul>
         </nav>
     </header>
-    <main>
 
-    </main>
-    <footer>
+    <main>
+        <h1>About the Owners</h1>
+        <p>Welcome to the Other Side of the Moon Door, your haven for eclectic treasures and unique finds. Here, we invite you to embark on a journey through our carefully curated collection of distinctive wares and uncommon goods, each piece designed for those who crave individuality in their spaces.</p>
         
-    </footer>
+        <p>As you explore, take your time to discover the stories behind our offerings—each item is waiting to become a cherished part of your home. We are passionate about creating a delightful shopping experience and deeply appreciate every one of our customers. Thank you for visiting us; we hope your day is as wonderful as the treasures you find here!</p>
+    </main>
+
 </body>
 </html>

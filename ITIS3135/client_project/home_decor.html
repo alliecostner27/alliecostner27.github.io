@@ -3,7 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home Decor Collection</title>
+    <style>
+        :root {
+            --primary-color: #7d5a3e; /* Muted brown */
+            --secondary-color: #c9c9c9; /* Light gray */
+            --accent-color: #f2b94c; /* Soft gold */
+            --text-color: #3b3b3b; /* Dark gray */
+            --background-color: #fefefe; /* Off-white */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif; /* Classic serif font for vintage feel */
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 15px 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        nav li a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            margin-top: 80px; /* Space for fixed header */
+            padding: 60px 40px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5em; 
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .decor-item {
+           text-align: center; 
+           margin-bottom: 30px; 
+           padding-bottom: 15px; 
+           border-bottom: 1px solid var(--secondary-color); /* Separator line between items */
+       }
+
+       .decor-item img {
+           width: 200px; /* Set a specific width for images */
+           height: auto; 
+           border-radius: 10px; /* Rounded corners for the image */
+       }
+
+       footer {
+           text-align: center; 
+           padding: 20px; 
+           background-color: var(--secondary-color);
+           color: var(--text-color);
+           position: relative; 
+           bottom: 0; 
+           width: 100%;
+           box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+       }
+       
+       @media (max-width: 768px) {
+           nav ul {
+                flex-direction: column;
+                align-items: center; 
+           }
+           
+           nav li {
+                margin-bottom: 10px; 
+           }
+       }
+    </style>
 </head>
 <body>
     <header>
@@ -17,11 +128,27 @@
             </ul>
         </nav>
     </header>
+
     <main>
+        <h1>Our Home Decor Collection</h1>
+
+        <div class="decor-item">
+            <h2>Giuseppe Armani Figurine</h2>
+            <img src="../images/catfigure.png" alt="Cat Figurine" />
+            <p>Sculpture Cat on Stairs, Artist Signed and Numbered (1983)</p>
+            <p>Price: $20.00</p>
+            <p><a href="https://www.ebay.com/itm/176527976847" target="_blank">View on eBay</a></p>
+          </div>
+
+          <div class="decor-item">
+              <h2>Set of Two Twin Owls</h2>
+              <img src="../images/owls.jpg" alt="Two Owls" />
+              <p>4" T Woodland Creatures Country Farmhouse Ceramic Boho</p>
+              <p>Price: $5.00</p>
+              <p><a href="https://www.ebay.com/itm/176594434170" target="_blank">View on eBay</a></p>
+          </div>
 
     </main>
-    <footer>
-        
-    </footer>
+
 </body>
 </html>

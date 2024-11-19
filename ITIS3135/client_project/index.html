@@ -4,26 +4,146 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-    <title>Client Home Page</title>
+    <title>Through the Moon Door</title>
+    <style>
+        :root {
+            --primary-color: #7d5a3e; /* Muted brown */
+            --secondary-color: #c9c9c9; /* Light gray */
+            --accent-color: #f2b94c; /* Soft gold */
+            --text-color: #3b3b3b; /* Dark gray */
+            --background-color: #fefefe; /* Off-white */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif; /* Classic serif font for vintage feel */
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 15px 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        nav li a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            margin-top: 80px; /* Space for fixed header */
+            padding: 60px 40px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: normal; /* Softer weight for vintage look */
+        }
+
+        h1 a {
+            color: #7d5a3e; /* Set link color to match primary color */
+            text-decoration: none; /* Remove underline from link */
+        }
+
+        h1 a:hover {
+            text-decoration: underline; /* Optional hover effect */
+        }
+
+        h2 {
+            color: var(--accent-color);
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        main p {
+            text-align: center;
+            font-size: 1.2em;
+            color: var(--text-color);
+            margin-top: 30px;
+            font-style: italic; /* Italic for vintage flair */
+        }
+
+        @media (max-width: 768px) {
+           nav ul {
+                flex-direction: column;
+                align-items: center; 
+           }
+           
+           nav li {
+                margin-bottom: 10px; 
+           }
+       }
+    </style>
 </head>
 <body>
     <header>
         <nav>
-            <ul>
+           <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="clothing.html">Clothing</a></li>
                 <li><a href="home_decor.html">Home Decor</a></li>
                 <li><a href="reviews.html">Reviews</a></li>
-            </ul>
-        </nav>
+           </ul>
+       </nav>
     </header>
     <main>
-        <h1>Welcome to Through the Moon Door</h1>
-        
-    </main>
-    <footer>
-
-    </footer>
+       <h1><a href="https://www.ebay.com/str/throughthemoondoor">Through the Moon Door</a></h1>
+       <h2>Step Beyond the Ordinary</h2>
+       <img src="../images/circle.png" alt="Through the Moon Door logo">
+       <p>"Where eclectic treasures find refuge and await their perfect homes."</p>
+   </main>
 </body>
 </html>
