@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Slideshows</title>
+</head>
+<body>
+    <header>
+        <div data-include="components/header.html"></div>
+    </header>
+    <main>
+        <h2 id="slideshow-header">Slideshow Gallery</h2>
+        <div id="slideshow-container">
+            <img id="main-image" src="./images/astronaut.png" alt="Slideshow Image">
+            <p id="caption"></p>
+            <div id="thumbnails"></div>
+            <div id="controls">
+                <button id="prev" class="control-btn">Previous</button>
+                <button id="next" class="control-btn">Next</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div data-include="components/footer.html"></div>
+    </footer>
+    <script>
+        $(document).ready(function() {
+            const images = [
+                { src: "./images/astronaut.png", caption: "A - Astronaut" },
+                { src: "./images/lavender.png", caption: "L - Lavender" },
+                { src: "./images/lightning.png", caption: "L - Lightning" },
+                { src: "./images/Iguana.png", caption: "I - Iguana" },
+                { src: "./images/Elephant.png", caption: "E - Elephant" }
+            ];
+        
+            let currentIndex = 0;
+        
+            function loadImage(index) {
+                $("#main-image").attr("src", images[index].src)
+                    .on("error", function() {
+                        console.log("Error loading image: " + images[index].src);
+                        $(this).attr("src", "path/to/placeholder-image.jpg");
+                    });
+                $("#caption").text(images[index].caption);
+                $(".thumbnail").removeClass("thumbnail-active");
+                $(".thumbnail").eq(index).addClass("thumbnail-active");
+            }
+        
+            function createThumbnails() {
+                images.forEach((image, index) => {
+                    const thumbnail = $("<img>")
+                        .addClass("thumbnail")
+                        .attr("src", image.src)
+                        .on("click", function() {
+                            currentIndex = index;
+                            loadImage(currentIndex);
+                        });
+                    $("#thumbnails").append(thumbnail);
+                });
+            }
+        
+            $("#prev").on("click", function() {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                loadImage(currentIndex);
+            });
+        
+            $("#next").on("click", function() {
+                currentIndex = (currentIndex + 1) % images.length;
+                loadImage(currentIndex);
+            });
+        
+            createThumbnails();
+            loadImage(currentIndex);
+        });
+    </script>
+    <script src="scripts/HTMLInclude.min.js"></script>
+    
+</body>
+</html>
