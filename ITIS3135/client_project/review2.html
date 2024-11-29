@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <title>Peer Review 1</title>
+    <style>
+        :root {
+            --primary-color: #7d5a3e; /* Muted brown */
+            --secondary-color: #c9c9c9; /* Light gray */
+            --accent-color: #f2b94c; /* Soft gold */
+            --text-color: #3b3b3b; /* Dark gray */
+            --background-color: #fefefe; /* Off-white */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif; /* Classic serif font for vintage feel */
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 15px 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        nav li a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            margin-top: 80px; /* Space for fixed header */
+            padding: 40px; /* Reduced padding for better spacing */
+            max-width: 800px; /* Adjusted max width for better layout */
+            margin-left: auto;
+            margin-right: auto;
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: var(--accent-color);
+            font-size: 2.5em; /* Increased font size for emphasis */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-top: 30px;
+        }
+
+        h3 a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        h3 a:hover {
+            text-decoration: underline; /* Optional hover effect */
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 30px; /* Adjusted margin for better spacing */
+            border-radius: 10px; /* Slightly rounded corners */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 10px; /* Rounded corners for sections */
+            margin-top: 30px; /* Space between sections */
+            box-shadow: inset 0 -2px 5px rgba(255,255,255,0.5); /* Subtle inner shadow for depth */
+        }
+
+        .section-heading {
+            color: var(--primary-color);
+            margin-top: 0; /* Remove top margin for section headers */
+            font-size: 1.8em; /* Slightly smaller header size for sections */
+            text-align: center; 
+            border-bottom: 2px solid var(--primary-color); /* Underline effect*/
+            padding-bottom: 10px; 
+        }
+
+        ul {
+            padding-left: 20px; /* Indentation for list items */
+            list-style-type: disc; /* Bullet points for lists */
+            margin-top: 10px; /* Space above the list */
+        }
+
+        li {
+            margin-bottom: 10px; /* Space between list items */
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column; 
+                align-items: center; 
+            }
+            
+            nav li {
+                margin-bottom: 10px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+           <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="clothing.html">Clothing</a></li>
+                <li><a href="home_decor.html">Home Decor</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="review1.html">Peer Review 1</a></li>
+                <li><a href="review2.html">Peer Review 2</a></li>
+           </ul>
+       </nav>
+    </header>
+    <main>
+        <h2>Client Project - Peer Review</h2>
+        <h3><a href="https://webpages.charlotte.edu/dbrewe19/itis3135/client_project/index.html">~ Destinee Brewer ~</a></h3>
+
+        <img src="../images/review2.png" alt="Screenshot of Destinee Brewer's project">
+
+        <div class="section checklist">
+            <h3 class="section-heading">╔══ Website Checklist ══╗</h3>
+            <ul>
+                <li>Submission has correct links</li>
+                <li>There are no upper-cases in the file/folder names</li>
+                <li>There are no spaces in the file/folder names</li>
+                <li>Pages contain a header, main, footer, and nav bar</li>
+                <li>There is sufficient contrast/font sizing</li>
+                <li>Website is accessible (alt text for images)</li>
+                <li>Content is relative to their client project</li>
+                <li>Website is responsive and mobile friendly</li>
+            </ul>
+        </div>
+
+        <div class="section comments">
+            <h3 class="section-heading">╔══ My Comments ══╗</h3>
+            <ul>
+                <li>I love the color scheme of the pages, it seems very tropical.</li>
+                <li>I also like the addition of the actual menu, which makes it more engaging.</li>
+                <li></li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>
