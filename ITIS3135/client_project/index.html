@@ -7,17 +7,17 @@
     <title>Through the Moon Door</title>
     <style>
         :root {
-            --primary-color: #7d5a3e; /* Muted brown */
-            --secondary-color: #c9c9c9; /* Light gray */
-            --accent-color: #f2b94c; /* Soft gold */
-            --text-color: #3b3b3b; /* Dark gray */
-            --background-color: #fefefe; /* Off-white */
+            --primary-color: #7d5a3e;
+            --secondary-color: #c9c9c9;
+            --accent-color: #f2b94c;
+            --text-color: #3b3b3b;
+            --background-color: #fefefe;
         }
 
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Georgia', serif; /* Classic serif font for vintage feel */
+            font-family: 'Georgia', serif;
             background-color: var(--background-color);
             color: var(--text-color);
             line-height: 1.6;
@@ -64,7 +64,7 @@
         }
 
         main {
-            margin-top: 80px; /* Space for fixed header */
+            margin-top: 80px;
             padding: 60px 40px;
             max-width: 1000px;
             margin-left: auto;
@@ -79,16 +79,16 @@
             font-size: 3em;
             margin-bottom: 20px;
             text-align: center;
-            font-weight: normal; /* Softer weight for vintage look */
+            font-weight: normal;
         }
 
         h1 a {
-            color: #7d5a3e; /* Set link color to match primary color */
-            text-decoration: none; /* Remove underline from link */
+            color: #7d5a3e;
+            text-decoration: none;
         }
 
         h1 a:hover {
-            text-decoration: underline; /* Optional hover effect */
+            text-decoration: underline;
         }
 
         h2 {
@@ -112,7 +112,79 @@
             font-size: 1.2em;
             color: var(--text-color);
             margin-top: 30px;
-            font-style: italic; /* Italic for vintage flair */
+            font-style: italic;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .fade-in-visible {
+            opacity: 1;
+        }
+
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            transition: background-color 0.3s;
+        }
+
+        #back-to-top:hover {
+            background: var(--accent-color);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 24px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--background-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loading::after {
+            content: '';
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--primary-color);
+            border-top: 5px solid var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         @media (max-width: 768px) {
@@ -128,6 +200,7 @@
     </style>
 </head>
 <body>
+    <div class="loading"></div>
     <header>
         <nav>
            <ul>
@@ -142,10 +215,73 @@
        </nav>
     </header>
     <main>
-       <h1><a href="https://www.ebay.com/str/throughthemoondoor">Through the Moon Door</a></h1>
-       <h2>Step Beyond the Ordinary</h2>
-       <img src="../images/circle.png" alt="Through the Moon Door logo">
-       <p>"Where eclectic treasures find refuge and await their perfect homes."</p>
-   </main>
+       <h1 class="fade-in"><a href="https://www.ebay.com/str/throughthemoondoor">Through the Moon Door</a></h1>
+       <h2 class="fade-in">Step Beyond the Ordinary</h2>
+       <img src="../images/circle.png" alt="Through the Moon Door logo" class="fade-in" loading="lazy">
+       <p class="fade-in">"Where eclectic treasures find refuge and await their perfect homes."</p>
+    </main>
+    <footer>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2024 Through the Moon Door. All rights reserved.</p>
+    </footer>
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Interactive quote
+            const quotes = [
+                "Where eclectic treasures find refuge and await their perfect homes.",
+                "Discover vintage charm in every corner.",
+                "Embrace the beauty of yesteryear.",
+                "Unique finds for discerning minds."
+            ];
+
+            let currentQuoteIndex = 0;
+            const quoteElement = document.querySelector('main p');
+            
+            quoteElement.addEventListener('click', function() {
+                currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+                this.textContent = `"${quotes[currentQuoteIndex]}"`;
+            });
+
+            quoteElement.style.cursor = 'pointer';
+            quoteElement.title = 'Click to see another quote';
+
+            // Fade-in animation
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-visible');
+                    }
+                });
+            });
+
+            fadeElements.forEach((el) => observer.observe(el));
+
+            // Back to top button
+            const backToTopButton = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 100) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            });
+
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Remove loading screen
+            window.addEventListener('load', () => {
+                document.querySelector('.loading').style.display = 'none';
+            });
+        });
+    </script>
 </body>
 </html>
