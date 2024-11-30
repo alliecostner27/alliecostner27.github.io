@@ -7,17 +7,17 @@
     <title>Customer Testimonials</title>
     <style>
         :root {
-            --primary-color: #7d5a3e; /* Muted brown */
-            --secondary-color: #c9c9c9; /* Light gray */
-            --accent-color: #f2b94c; /* Soft gold */
-            --text-color: #3b3b3b; /* Dark gray */
-            --background-color: #fefefe; /* Off-white */
+            --primary-color: #7d5a3e; 
+            --secondary-color: #c9c9c9; 
+            --accent-color: #f2b94c; 
+            --text-color: #3b3b3b; 
+            --background-color: #fefefe; 
         }
 
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Georgia', serif; /* Classic serif font for vintage feel */
+            font-family: 'Georgia', serif; 
             background-color: var(--background-color);
             color: var(--text-color);
             line-height: 1.6;
@@ -64,7 +64,7 @@
         }
 
         main {
-            margin-top: 80px; /* Space for fixed header */
+            margin-top: 80px; 
             padding: 60px 40px;
             max-width: 1000px;
             margin-left: auto;
@@ -76,7 +76,7 @@
 
         h1 {
             color: var(--primary-color);
-            font-size: 2.5em; /* Slightly smaller for better balance */
+            font-size: 2.5em; 
             margin-bottom: 20px;
             text-align: center;
         }
@@ -84,7 +84,7 @@
         h2 {
             color: var(--accent-color);
             font-size: 2em; 
-            margin-top: 40px; /* Space above the subtitle */
+            margin-top: 40px; 
             text-align: center; 
         }
 
@@ -92,42 +92,136 @@
             max-width: 100%;
             height: auto;
             display: block;
-            margin-top: 20px; /* Reduced space above the image */
-            border-radius: 10px; /* Rounded corners for the image */
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+            margin-top: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
         }
 
-        main p {
-           text-align: left; /* Align text to the left for readability */
-           font-size: 1.1em; 
-           color: var(--text-color); 
-           margin-top: 20px; 
-           font-style: italic; /* Italic for vintage flair */
-           line-height: 1.5; /* Improved line height for readability */
-           padding-bottom: 15px; /* Add space below each testimonial */
-           border-bottom: 1px solid var(--secondary-color); /* Separator line between testimonials */
-       }
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
 
-       footer {
-           text-align: center; 
-           padding: 20px; 
-           background-color: var(--secondary-color);
-           color: var(--text-color);
-           position: relative; 
-           bottom: 0; 
-           box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-       }
-
-       @media (max-width: 768px) {
-           nav ul {
+        @media (max-width: 768px) {
+            nav ul {
                 flex-direction: column;
                 align-items: center; 
-           }
-           
-           nav li {
+            }
+            
+            nav li {
                 margin-bottom: 10px; 
-           }
-       }
+            }
+        }
+
+        /* Enhanced Carousel Styles */
+        #testimonial-carousel {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #f9f5f0;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .testimonial {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .testimonial.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .testimonial p {
+            font-size: 1.2em;
+            font-style: italic;
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .testimonial p::before,
+        .testimonial p::after {
+            content: '"';
+            font-size: 2em;
+            color: var(--primary-color);
+            position: absolute;
+            opacity: 0.5;
+        }
+
+        .testimonial p::before {
+            left: 0;
+            top: -10px;
+        }
+
+        .testimonial p::after {
+            right: 0;
+            bottom: -20px;
+        }
+
+        .testimonial h3 {
+            color: var(--primary-color);
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(125, 90, 62, 0.1);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        #prev-btn {
+            left: -25px;
+        }
+
+        #next-btn {
+            right: -25px;
+        }
+
+        .testimonial-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .indicator {
+            width: 10px;
+            height: 10px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .indicator.active {
+            background-color: var(--primary-color);
+        }
     </style>
 </head>
 <body>
@@ -151,12 +245,93 @@
 
         <h2>Customer Testimonials</h2>
 
-        <p>Customer 1:<br>Smooth transaction. Great communication. Quick to ship. The German cookie jar arrived safely. It was packed extremely well for the trip. I would purchase from this seller again!! ⭐⭐⭐⭐⭐</p>
-
-        <p>Customer 2:<br>This item arrived promptly from seller and it was packaged nicely for transit. I bought this item (at a very reasonable price) to add to my “household shrine to all the felines we have had over the years”. I’m very pleased with it and recommend this seller to others! Thank you!</p>
-
-        <p>Customer 3:<br>The wishing well was as advertised. Excellent condition. Price was reasonable and was securely packaged and quickly shipped. Very pleased with the transaction and would buy from this seller again.</p>
+        <div id="testimonial-carousel">
+            <div class="testimonial active">
+                <p>Smooth transaction. Great communication. Quick to ship. The German cookie jar arrived safely. It was packed extremely well for the trip. I would purchase from this seller again!!</p>
+                <h3>Customer 1</h3>
+            </div>
+            <div class="testimonial">
+                <p>This item arrived promptly from seller and it was packaged nicely for transit. I bought this item (at a very reasonable price) to add to my "household shrine to all the felines we have had over the years". I'm very pleased with it and recommend this seller to others! Thank you!</p>
+                <h3>Customer 2</h3>
+            </div>
+            <div class="testimonial">
+                <p>The wishing well was as advertised. Excellent condition. Price was reasonable and was securely packaged and quickly shipped. Very pleased with the transaction and would buy from this seller again.</p>
+                <h3>Customer 3</h3>
+            </div>
+            <button id="prev-btn" class="carousel-btn">←</button>
+            <button id="next-btn" class="carousel-btn">→</button>
+        </div>
     </main>
 
+    <footer>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2024 Through the Moon Door. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const testimonials = document.querySelectorAll('.testimonial');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            let currentIndex = 0;
+    
+            // Create indicators container
+            const indicatorsContainer = document.createElement('div');
+            indicatorsContainer.classList.add('testimonial-indicators');
+    
+            // Initialize an array to hold indicator elements
+            const indicators = [];
+    
+            // Function declaration for showTestimonial
+            function showTestimonial(index) {
+                // Remove active class from current testimonial and indicator
+                testimonials[currentIndex].classList.remove('active');
+                indicators[currentIndex].classList.remove('active');
+    
+                // Set new current index
+                currentIndex = index;
+    
+                // Add active class to new testimonial and indicator
+                testimonials[currentIndex].classList.add('active');
+                indicators[currentIndex].classList.add('active');
+            }
+    
+            // Create indicators and append to container
+            testimonials.forEach((_, index) => {
+                const indicator = document.createElement('div');
+                indicator.classList.add('indicator');
+                // Now this will work because showTestimonial is declared above
+                indicator.addEventListener('click', () => showTestimonial(index));
+                indicatorsContainer.appendChild(indicator);
+                indicators.push(indicator); // Store each indicator in the array
+            });
+    
+            // Append indicators container to the carousel
+            document.getElementById('testimonial-carousel').appendChild(indicatorsContainer);
+    
+            function nextTestimonial() {
+                let nextIndex = (currentIndex + 1) % testimonials.length;
+                showTestimonial(nextIndex);
+            }
+    
+            function prevTestimonial() {
+                let prevIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+                showTestimonial(prevIndex);
+            }
+    
+            nextBtn.addEventListener('click', nextTestimonial);
+            prevBtn.addEventListener('click', prevTestimonial);
+    
+            // Show the first testimonial initially
+            showTestimonial(0);
+    
+            // Auto-rotate testimonials every 5 seconds
+            setInterval(nextTestimonial, 5000);
+        });
+    </script>
 </body>
 </html>
