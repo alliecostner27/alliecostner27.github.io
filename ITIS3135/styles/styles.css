@@ -111,12 +111,19 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Mobile devices */
 @media (max-width: 600px) {
-    body { font-size: 16px; }
-    header, footer, main, .background-head {
-        padding: 15px;
-        margin: 10px auto;
-    }
+  /* Styles for mobile devices */
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+  /* Styles for tablets */
+}
+
+/* Desktops */
+@media (min-width: 1025px) {
+  /* Styles for desktops */
 }
 
 #employee-data-complex {
