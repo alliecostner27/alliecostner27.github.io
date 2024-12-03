@@ -134,7 +134,7 @@
             transition: opacity 0.5s ease-in-out;
         }
 
-        .testimonial.active {
+        .testimonial[data-active="true"] {
             display: block;
             opacity: 1;
         }
@@ -168,7 +168,7 @@
             bottom: -20px;
         }
 
-        .testimonial h3 {
+        .testimonial-author {
             color: var(--primary-color);
             margin-top: 20px;
             font-weight: bold;
@@ -219,7 +219,7 @@
             transition: background-color 0.3s ease;
         }
 
-        .indicator.active {
+        .indicator[data-active="true"] {
             background-color: var(--primary-color);
         }
     </style>
@@ -246,17 +246,17 @@
         <h2>Customer Testimonials</h2>
 
         <div id="testimonial-carousel">
-            <div class="testimonial active">
+            <div class="testimonial" data-active="true">
                 <p>Smooth transaction. Great communication. Quick to ship. The German cookie jar arrived safely. It was packed extremely well for the trip. I would purchase from this seller again!!</p>
-                <h3>Customer 1</h3>
+                <p class="testimonial-author">Customer 1</p>
             </div>
             <div class="testimonial">
                 <p>This item arrived promptly from seller and it was packaged nicely for transit. I bought this item (at a very reasonable price) to add to my "household shrine to all the felines we have had over the years". I'm very pleased with it and recommend this seller to others! Thank you!</p>
-                <h3>Customer 2</h3>
+                <p class="testimonial-author">Customer 2</p>
             </div>
             <div class="testimonial">
                 <p>The wishing well was as advertised. Excellent condition. Price was reasonable and was securely packaged and quickly shipped. Very pleased with the transaction and would buy from this seller again.</p>
-                <h3>Customer 3</h3>
+                <p class="testimonial-author">Customer 3</p>
             </div>
             <button id="prev-btn" class="carousel-btn">←</button>
             <button id="next-btn" class="carousel-btn">→</button>
@@ -282,29 +282,31 @@
             // Create indicators container
             const indicatorsContainer = document.createElement('div');
             indicatorsContainer.classList.add('testimonial-indicators');
-    
             // Initialize an array to hold indicator elements
             const indicators = [];
     
             // Function declaration for showTestimonial
             function showTestimonial(index) {
-                // Remove active class from current testimonial and indicator
+                // Remove active class and data attribute from current testimonial and indicator
                 testimonials[currentIndex].classList.remove('active');
+                testimonials[currentIndex].removeAttribute('data-active');
                 indicators[currentIndex].classList.remove('active');
+                indicators[currentIndex].removeAttribute('data-active');
     
                 // Set new current index
                 currentIndex = index;
     
-                // Add active class to new testimonial and indicator
+                // Add active class and data attribute to new testimonial and indicator
                 testimonials[currentIndex].classList.add('active');
+                testimonials[currentIndex].setAttribute('data-active', 'true');
                 indicators[currentIndex].classList.add('active');
+                indicators[currentIndex].setAttribute('data-active', 'true');
             }
     
             // Create indicators and append to container
             testimonials.forEach((_, index) => {
                 const indicator = document.createElement('div');
                 indicator.classList.add('indicator');
-                // Now this will work because showTestimonial is declared above
                 indicator.addEventListener('click', () => showTestimonial(index));
                 indicatorsContainer.appendChild(indicator);
                 indicators.push(indicator); // Store each indicator in the array
